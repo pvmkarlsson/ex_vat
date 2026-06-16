@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-stone-50 text-fjord-900 antialiased;
+}
+
+/* Leaflet ska aldrig lägga sig ovanpå den sticky budgetpanelen / modaler. */
+.leaflet-container {
+  z-index: 0;
+  font: inherit;
+}
+
+/* Stora, tydliga kryssrutor enligt designkrav. */
+.big-checkbox {
+  @apply h-6 w-6 shrink-0 cursor-pointer rounded-md border-2 border-fjord-300 text-fjord-600
+         focus:ring-2 focus:ring-fjord-400 focus:ring-offset-1;
+  accent-color: #395d73;
+}
+
+/* Tunn, diskret scrollbar i budgetpanelen. */
+.thin-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-fjord-200;
+}
